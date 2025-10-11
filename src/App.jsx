@@ -1,4 +1,5 @@
 import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Import Component Files using relative paths
 import Navbar from './components/Navbar.jsx';       // Corrected path
