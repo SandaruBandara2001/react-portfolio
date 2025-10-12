@@ -21,11 +21,11 @@ const Socials = () => {
 
   // Images from /public/images/... => reference with a leading slash
   const socialLinks = [
-    { name: "Twitter",   img: "src/assets/images/twitter.png",   url: "https://twitter.com/Sandaru18769360" },
-    { name: "Facebook",  img: "src/assets/images/facebook.png",  url: "https://www.facebook.com/sandaru.bandara27?mibextid=LQQJ4d" },
-    { name: "Instagram", img: "src/assets/images/instagram.png", url: "https://instagram.com/zandaru._?igshid=MzRlODBiNWFlZA==" },
-    { name: "LinkedIn",  img: "src/assets/images/linkedin.png",  url: "https://www.linkedin.com/in/sandaru-bandara-5ab147220/" },
-    { name: "GitHub",    img: "src/assets/images/github.png",    url: "https://github.com/SandaruBandara2001" },
+    { name: "Twitter",   img: "/images/twitter.png",   url: "https://twitter.com/Sandaru18769360" },
+    { name: "Facebook",  img: "/images/facebook.png",  url: "https://www.facebook.com/sandaru.bandara27?mibextid=LQQJ4d" },
+    { name: "Instagram", img: "/images/instagram.png", url: "https://instagram.com/zandaru._?igshid=MzRlODBiNWFlZA==" },
+    { name: "LinkedIn",  img: "/images/linkedin.png",  url: "https://www.linkedin.com/in/sandaru-bandara-5ab147220/" },
+    { name: "GitHub",    img: "/images/github.png",    url: "https://github.com/SandaruBandara2001" },
   ];
 
   return (

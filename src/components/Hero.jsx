@@ -7,9 +7,9 @@ const Hero = () => {
   // Put your hero images in /public/images/hero/
   const slides = useMemo(
     () => [
-      "public/images/projects/banner.jpg",
-      "public/images/projects/banner2.jpg",
-      "public/images/projects/banner3.jpg",
+      "/images/projects/banner.jpg",
+      "/images/projects/banner2.jpg",
+      "/images/projects/banner3.jpg",
     ],
     []
   );
