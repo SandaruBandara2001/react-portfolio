@@ -289,9 +289,9 @@ section .title::after {
 .about .about-content .right .text span {
     color: var(--accent-gold);
 }
-.about .about-content .right p {
+/* .about .about-content .right p {
     text-align: justify;
-}
+} */
 .about .about-content .right a {
     display: inline-block;
     background: transparent;
@@ -308,6 +308,32 @@ section .title::after {
     color: var(--bg-dark);
     background: var(--accent-gold);
 }
+/* Keep the whole "a + animated word" on one line */
+.type-line{
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;     /* no line break between a + word */
+  gap: 6px;
+}
+
+/* Prevent the animated word from breaking mid-word */
+.type-anim{
+  display: inline-block;
+  white-space: nowrap;
+  word-break: keep-all;    /* no hyphenation/break inside word */
+  line-height: 1.25;
+}
+
+/* Stabilize the whole sentence line */
+.about .about-content .right .text{
+  line-height: 1.25;
+}
+
+/* On very small screens, reduce the font a bit so it still fits */
+@media (max-width: 500px){
+  .about .about-content .right .text{ font-size: 20px; }
+}
+
 
 
 /* === Projects (Services) grid fix === */
@@ -659,6 +685,8 @@ section .title::after {
   background: none;
 }
 
+
+
 /* Footer Section Styling */
 footer {
     background: var(--bg-dark);
@@ -708,6 +736,9 @@ footer span a:hover {
     .home .home-content .text-2 { font-size: 60px; }
     .home .home-content .text-3 { font-size: 32px; }
     .serv-content .card { width: 100%; }
+    section {
+    padding: 50px 0;
+}
 }
 @media (max-width: 500px) {
     .home .home-content .text-2 { font-size: 50px; }

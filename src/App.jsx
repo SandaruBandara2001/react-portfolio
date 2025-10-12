@@ -17,7 +17,7 @@ import './assets/style.css';
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar /> 
       <Hero />
       <About />
       <Projects />
