@@ -5,12 +5,32 @@
 
 /* CSS Variables for easy color management */
 :root {
-    --bg-dark: #1E1E28;
+    --bg-dark: #11172a;
     --bg-card: #2D2D3A;
     --text-light: #F0F0F0;
     --text-gray: #A0A0A0;
-    --accent-gold: #FFB400;
+    --accent-gold: #7ac1e4;
 }
+
+/* Remove underline from all links, everywhere */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none !important;
+}
+
+/* Keep your brand color (optional) */
+a { color: var(--accent); }
+a:hover { opacity: .85; }
+
+/* Accessibility: still show a focus indicator for keyboard users */
+a:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+}
+
 
 * {
     margin: 0;
@@ -110,6 +130,7 @@ section .title::after {
     color: var(--text-light);
     font-size: 35px;
     font-weight: 700;
+    text-decoration: none;
 }
 .navbar .logo a span {
     color: var(--accent-gold);
@@ -367,9 +388,10 @@ section .title::after {
 
 /* Skills Section Styling */
 .skills {
-    background: #fff; /* White section for contrast */
-    color: #333;
+    background: var(--bg-dark); /* White section for contrast */
+    color: var(--text-light);
 }
+
 .skills .skills-content .column {
     width: calc(50% - 30px);
 }
@@ -377,26 +399,34 @@ section .title::after {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #111;
+    color: var(--text-light);
 }
 .skills .skills-content .left p {
     text-align: justify;
 }
 .skills .skills-content .left a {
-    display: inline-block;
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 16px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid var(--bg-dark);
-    transition: all 0.3s ease;
+  display: flex;                    /* center text inside */
+  align-items: center;              /* vertical center */
+  justify-content: center;          /* horizontal center */
+  text-align: center;               /* multi-line safety */
+  text-decoration: none;            /* no underline */
+
+  height: 45px;
+  width: 160px;                     /* fixed button width */              /* center the button in the column */
+
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid var(--accent-gold);
+
+  color: var(--text-light);
+  background: var(--accent-gold);        /* was --accent-gold */
+  transition: all 0.3s ease;
 }
 .skills .skills-content .left a:hover {
-    color: var(--bg-dark);
-    background: none;
+  color: var(--accent-gold);
+  background: none;
 }
 .skills .skills-content .right .bars {
     margin-bottom: 15px;
@@ -410,7 +440,7 @@ section .title::after {
 .skills .skills-content .right span {
     font-weight: 500;
     font-size: 18px;
-    color: #333;
+    color: #ffffff;
 }
 .skills .skills-content .right .line {
     height: 5px;
@@ -425,7 +455,7 @@ section .title::after {
     height: 100%;
     left: 0;
     top: 0;
-    background: var(--accent-gold);
+    background: rgb(70, 115, 229);
     border-radius: 2px;
 }
 .skills-content .right .html::before{ width: 90%; }
@@ -447,7 +477,7 @@ section .title::after {
   background: var(--bg-card);
   border-radius: 16px;
   /* keep a constant border width so nothing jumps on hover */
-  border: 2px solid rgba(255, 180, 0, 0.12);
+  /*border: 2px solid rgba(255, 180, 0, 0.12);8*/
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
 }
@@ -468,7 +498,7 @@ section .title::after {
   width: 148px; height: 148px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgba(255, 180, 0, 0.7); /* thinner ring */
+  border: 2px solid rgba(0, 174, 255, 0.7); /* thinner ring */
   background: #111;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
@@ -485,7 +515,7 @@ section .title::after {
 /* Hover: subtle lift + glow; no border-thickness change */
 .teams .card:hover{
   transform: translateY(-6px);
-  border-color: rgba(255, 180, 0, 0.6);
+  border-color: var(--accent-gold);
   box-shadow:
     0 10px 26px rgba(0,0,0,.35),
     0 0 0 0 rgba(255, 180, 0, 0); /* keep layout stable */
@@ -495,7 +525,7 @@ section .title::after {
 .teams .card:hover .social-img{
   transform: scale(1.02);
   border-color: var(--accent-gold);
-  box-shadow: 0 0 24px rgba(255, 180, 0, 0.25);
+  box-shadow: 0 0 24px rgba(59, 154, 226, 0.25);
 }
 
 /* Dots & arrows tone down a bit on dark */
@@ -549,8 +579,8 @@ section .title::after {
 
 /* Contact Section Styling */
 .contact {
-    background: #fff;
-    color: #333;
+    background:var(--bg-dark);
+    color: var(--text-light);
 }
 .contact .contact-content .column {
     width: calc(50% - 30px);
@@ -559,7 +589,7 @@ section .title::after {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #111;
+    color:var(--text-light);
 }
 .contact .contact-content .row {
     display: flex;
@@ -611,7 +641,7 @@ section .title::after {
   resize: none;
 }
 .right form .button-area button {
-  color: var(--bg-dark);
+  color: var(--text-light);
   display: block;
   width: 160px!important;
   height: 45px;
