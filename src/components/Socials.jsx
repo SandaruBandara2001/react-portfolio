@@ -1,13 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import twitterImg from "public/images/twitter.png";
-import facebookImg from "public/images/facebook.png";
-import instagramImg from "public/images/instagram.png";
-import linkedinImg from "public/images/linkedin.png";
-import githubImg from "public/images/github.png";
+// slick css imports stay as-is
 
 const Socials = () => {
   const settings = {
@@ -26,12 +19,13 @@ const Socials = () => {
     ],
   };
 
+  // Images from /public/images/... => reference with a leading slash
   const socialLinks = [
-    { name: "Twitter",   img: twitterImg,   url: "https://twitter.com/Sandaru18769360" },
-    { name: "Facebook",  img: facebookImg,  url: "https://www.facebook.com/sandaru.bandara27?mibextid=LQQJ4d" },
-    { name: "Instagram", img: instagramImg, url: "https://instagram.com/zandaru._?igshid=MzRlODBiNWFlZA==" },
-    { name: "LinkedIn",  img: linkedinImg,  url: "https://www.linkedin.com/in/sandaru-bandara-5ab147220/" },
-    { name: "GitHub",    img: githubImg,    url: "https://github.com/SandaruBandara2001" },
+    { name: "Twitter",   img: "/images/twitter.png",   url: "https://twitter.com/Sandaru18769360" },
+    { name: "Facebook",  img: "/images/facebook.png",  url: "https://www.facebook.com/sandaru.bandara27?mibextid=LQQJ4d" },
+    { name: "Instagram", img: "/images/instagram.png", url: "https://instagram.com/zandaru._?igshid=MzRlODBiNWFlZA==" },
+    { name: "LinkedIn",  img: "/images/linkedin.png",  url: "https://www.linkedin.com/in/sandaru-bandara-5ab147220/" },
+    { name: "GitHub",    img: "/images/github.png",    url: "https://github.com/SandaruBandara2001" },
   ];
 
   return (
