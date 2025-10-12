@@ -9,7 +9,7 @@ const About = () => {
         <h2 className="title">About me</h2>
         <div className="about-content">
           <div className="column left">
-            <img src="/images/Portfolio01.jpg" alt="Sandaru Bandara" />
+            <img src="src/assets/images/Portfolio01.JPG" alt="Sandaru Bandara" />
           </div>
           <div className="column right">
             <div className="text">
@@ -21,7 +21,7 @@ const About = () => {
                 repeat={Infinity}
               />
             </div>
-            <p>…</p>
+            <p></p>
             <a href="https://drive.google.com/file/d/1Zb4H-07vy0bkUa3ZtK1OBCO999-xKEKd/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download CV</a>
           </div>
         </div>
