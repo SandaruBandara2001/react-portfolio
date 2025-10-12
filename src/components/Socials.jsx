@@ -3,11 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import twitterImg from "../assets/images/twitter.png";
-import facebookImg from "../assets/images/facebook.png";
-import instagramImg from "../assets/images/instagram.png";
-import linkedinImg from "../assets/images/linkedin.png";
-import githubImg from "../assets/images/github.png";
+import twitterImg from "public/images/twitter.png";
+import facebookImg from "public/images/facebook.png";
+import instagramImg from "public/images/instagram.png";
+import linkedinImg from "public/images/linkedin.png";
+import githubImg from "public/images/github.png";
 
 const Socials = () => {
   const settings = {
