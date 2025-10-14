@@ -1,31 +1,37 @@
+// src/components/Socials.jsx
 import React from "react";
 import Slider from "react-slick";
-// slick css imports stay as-is
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Socials = () => {
   const settings = {
     dots: true,
     arrows: true,
     infinite: true,
-    speed: 450,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    adaptiveHeight: true,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     responsive: [
-      { breakpoint: 947, settings: { slidesToShow: 2 } },
-      { breakpoint: 690, settings: { slidesToShow: 1 } },
+      { 
+        breakpoint: 947, 
+        settings: { slidesToShow: 2 } 
+      },
+      { 
+        breakpoint: 690, 
+        settings: { slidesToShow: 1 } 
+      },
     ],
   };
 
-  // Images from /public/images/... => reference with a leading slash
   const socialLinks = [
-    { name: "Twitter",   img: "/images/twitter.png",   url: "https://twitter.com/Sandaru18769360" },
-    { name: "Facebook",  img: "/images/facebook.png",  url: "https://www.facebook.com/sandaru.bandara27?mibextid=LQQJ4d" },
-    { name: "Instagram", img: "/images/instagram.png", url: "https://instagram.com/zandaru._?igshid=MzRlODBiNWFlZA==" },
-    { name: "LinkedIn",  img: "/images/linkedin.png",  url: "https://www.linkedin.com/in/sandaru-bandara-5ab147220/" },
-    { name: "GitHub",    img: "/images/github.png",    url: "https://github.com/SandaruBandara2001" },
+    { name: "Twitter", img: "/images/twitter.png", url: "https://twitter.com/Sandaru18769360" },
+    { name: "Facebook", img: "/images/facebook.png", url: "https://www.facebook.com/sandaru.bandara27" },
+    { name: "Instagram", img: "/images/instagram.png", url: "https://instagram.com/zandaru._" },
+    { name: "LinkedIn", img: "/images/linkedin.png", url: "https://www.linkedin.com/in/sandaru-bandara-5ab147220/" },
+    { name: "GitHub", img: "/images/github.png", url: "https://github.com/SandaruBandara2001" },
   ];
 
   return (
@@ -33,13 +39,13 @@ const Socials = () => {
       <div className="max-width">
         <h2 className="title">Social Media</h2>
         <Slider {...settings} className="socials-slider">
-          {socialLinks.map((s) => (
-            <div className="social-slide" key={s.name}>
+          {socialLinks.map((social, index) => (
+            <div key={index} className="social-slide">
               <div className="card">
                 <div className="box">
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="social-link">
-                    <img src={s.img} alt={s.name} className="social-img" />
-                    <div className="text">{s.name}</div>
+                  <a href={social.url} target="_blank" rel="noopener noreferrer" className="social-link">
+                    <img src={social.img} alt={social.name} className="social-img" />
+                    <div className="text">{social.name}</div>
                   </a>
                 </div>
               </div>

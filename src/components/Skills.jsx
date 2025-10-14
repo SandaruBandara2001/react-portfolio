@@ -1,14 +1,20 @@
+// src/components/Skills.jsx
 import React from 'react';
 
 const Skills = () => {
   return (
     <section className="skills" id="skills">
       <div className="max-width">
-        <h2 className="title titel-1">My Skills</h2>
+        <h2 className="title">My Skills</h2>
         <div className="skills-content">
           <div className="column left">
             <div className="text">My creative skills & experiences.</div>
-            <p>I’m a 3rd year Software engineering student. My major study areas are programming, algorithm, software developments and etc. And also, I have got some knowledges about object-oriented programming, software designing and database managing. Throughout the academic period I could improve my problem solving and group working skills through the individual and group projects.</p>
+            <p>
+              I'm a 3rd year Software Engineering student. My major study areas are programming, algorithms, 
+              software development and etc. I have knowledge about object-oriented programming, software designing 
+              and database management. Throughout the academic period I improved my problem solving and group 
+              working skills through individual and group projects.
+            </p>
             <a href="#services">Read more</a>
           </div>
           <div className="column right">

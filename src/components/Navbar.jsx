@@ -1,4 +1,6 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -20,28 +22,39 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuActive(!isMenuActive);
+    document.body.style.overflow = !isMenuActive ? 'hidden' : 'unset';
   };
 
   const closeMenu = () => {
     setMenuActive(false);
+    document.body.style.overflow = 'unset';
   };
 
   return (
     <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
-      <div className="max-width">
-        <div className="logo"><a href="#">Portfo<span>lio.</span></a></div>
-        <ul className={`menu ${isMenuActive ? 'active' : ''}`}>
-          <li><a href="#home" className="menu-btn" onClick={closeMenu}>Home</a></li>
-          <li><a href="#about" className="menu-btn" onClick={closeMenu}>About</a></li>
-          <li><a href="#services" className="menu-btn" onClick={closeMenu}>Projects</a></li>
-          <li><a href="#skills" className="menu-btn" onClick={closeMenu}>Skills</a></li>
-          <li><a href="#teams" className="menu-btn" onClick={closeMenu}>Social Media</a></li>
-          <li><a href="#contact" className="menu-btn" onClick={closeMenu}>Contact</a></li>
-        </ul>
-        <div className="menu-btn" onClick={toggleMenu}>
-          <i className={`fas fa-bars ${isMenuActive ? 'active' : ''}`}></i>
+      <div className="container">
+        <div className="max-width">
+          <div className="logo">
+            <a href="#home" onClick={closeMenu}>Portfo<span>lio.</span></a>
+          </div>
+          
+          <ul className={`menu ${isMenuActive ? 'active' : ''}`}>
+            <li><a href="#home" onClick={closeMenu}>Home</a></li>
+            <li><a href="#about" onClick={closeMenu}>About</a></li>
+            <li><a href="#services" onClick={closeMenu}>Projects</a></li>
+            <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
+            <li><a href="#teams" onClick={closeMenu}>Social Media</a></li>
+            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+          </ul>
+          
+          <div className="nav-controls">
+            <ThemeToggle />
+            <div className="menu-btn" onClick={toggleMenu}>
+              <i className={`fas fa-bars ${isMenuActive ? 'active' : ''}`}></i>
+            </div>
+          </div>
         </div>
-      </div>
+      </div>  
     </nav>
   );
 };
