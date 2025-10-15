@@ -30,7 +30,7 @@ const Hero = () => {
   const currSrc = slides[index];
 
   return (
-    <section className="home" id="home">
+    <section className="hero" id="home">
       {/* Background carousel (behind everything) */}
       <div className="hero-bg-layer">
         {/* previous image (fading out) */}
@@ -45,30 +45,37 @@ const Hero = () => {
           className="hero-bg hero-bg-curr"
           style={{ backgroundImage: `url(${currSrc})` }}
         />
-        {/* subtle dark overlay to keep text readable */}
-        <div className="hero-bg-overlay" />
+        {/* Socials-inspired gradient overlay */}
+        <div className="hero-gradient-overlay" />
       </div>
 
-      {/* Your original content (unchanged) */}
+      {/* Hero content */}
       <div className="max-width">
-        <div className="home-content">
-          <div className="text-1">Hello, my name is</div>
-          <div className="text-2">Sandaru Bandara</div>
-          <div className="text-3">
-            And I'm a{" "}
-            <TypeAnimation
-              sequence={[
-                "Developer", 1000,
-                "Student", 1000,
-                "Designer", 1000,
-                "Freelancer", 1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+        <div className="hero-content">
+          <div className="hero-badge">
+            <span>Hello, my name is</span>
           </div>
-          <a href="#contact">Contact Me</a>
+          <h1 className="hero-name">Sandaru Bandara</h1>
+          <div className="hero-title">
+            And I'm a{" "}
+            <span className="type-line">
+              <TypeAnimation
+                sequence={[
+                  "Developer", 1000,
+                  "Student", 1000,
+                  "Designer", 1000,
+                  "Freelancer", 1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </span>
+          </div>
+          <a href="#contact" className="hero-cta">
+            <span>Contact Me</span>
+            <i className="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
