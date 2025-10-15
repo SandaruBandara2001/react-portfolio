@@ -41,7 +41,7 @@ const Navbar = () => {
           <ul className={`menu ${isMenuActive ? 'active' : ''}`}>
             <li><a href="#home" onClick={closeMenu}>Home</a></li>
             <li><a href="#about" onClick={closeMenu}>About</a></li>
-            <li><a href="#services" onClick={closeMenu}>Projects</a></li>
+            <li><a href="#projects" onClick={() => handleNavClick('projects')}>Projects</a></li>
             <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
             <li><a href="#teams" onClick={closeMenu}>Social Media</a></li>
             <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
