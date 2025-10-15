@@ -1,26 +1,41 @@
 // src/components/Socials.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Socials = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   const settings = {
     dots: true,
-    arrows: true,
+    arrows: !isMobile, // Hide arrows on mobile for cleaner look
     infinite: true,
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: isMobile ? 1 : 3, // Force 1 slide on mobile
     slidesToScroll: 1,
-    adaptiveHeight: false, // Changed to false for iOS stability
+    adaptiveHeight: false,
     autoplay: true,
     autoplaySpeed: 4000,
-    pauseOnHover: true,
+    pauseOnHover: !isMobile, // Disable pause on hover for mobile
     swipe: true,
     touchMove: true,
-    touchThreshold: 10, // Increased for better iOS touch
+    touchThreshold: 10,
     swipeToSlide: true,
     cssEase: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     beforeChange: (current, next) => setActiveSlide(next),
@@ -35,17 +50,21 @@ const Socials = () => {
       { 
         breakpoint: 768, 
         settings: { 
-          slidesToShow: 2,
-          arrows: true,
-          touchThreshold: 15
+          slidesToShow: 1, // Force 1 slide
+          arrows: false, // Hide arrows on mobile
+          dots: true,
+          centerMode: true, // Center the single slide
+          centerPadding: '20px' // Add padding around centered slide
         } 
       },
       { 
         breakpoint: 480, 
         settings: { 
-          slidesToShow: 1,
-          arrows: true,
-          touchThreshold: 20
+          slidesToShow: 1, // Force 1 slide
+          arrows: false, // Hide arrows on mobile
+          dots: true,
+          centerMode: true,
+          centerPadding: '25px' // More padding for small screens
         } 
       },
     ],
@@ -118,7 +137,7 @@ const Socials = () => {
                           src={social.img} 
                           alt={social.name} 
                           className="social-img"
-                          loading="lazy" // Add lazy loading for iOS
+                          loading="lazy"
                         />
                         {/* <i className={social.icon}></i> */}
                       </div>
