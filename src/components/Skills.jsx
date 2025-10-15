@@ -2,6 +2,27 @@
 import React from 'react';
 
 const Skills = () => {
+  const scrollToProjects = () => {
+    console.log('Scroll to projects clicked'); // Debug log
+    
+    // Try multiple possible IDs since your Projects section might have different ID
+    const projectsSection = document.getElementById('services') || 
+                           document.getElementById('projects') ||
+                           document.getElementById('services');
+    
+    if (projectsSection) {
+      console.log('Projects section found:', projectsSection); // Debug log
+      projectsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      console.log('Projects section not found'); // Debug log
+      // Fallback: scroll to top of page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="skills" id="skills">
       <div className="max-width">
@@ -20,7 +41,18 @@ const Skills = () => {
                   and database management. Throughout the academic period I improved my problem solving and group 
                   working skills through individual and group projects.
                 </p>
-                <div className="skills-cta">
+                <div 
+                  className="skills-cta" 
+                  onClick={scrollToProjects}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      scrollToProjects();
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label="Explore my projects"
+                >
                   <span>Explore Projects</span>
                   <i className="fas fa-arrow-right"></i>
                 </div>
