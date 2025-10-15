@@ -775,18 +775,30 @@ textarea {
 }
 
 /* Social Media Section */
-.socials-slider .slick-slide {
-  padding: 0 1rem;
+/* Social Media Section - iOS Fixes */
+.teams .slider-container {
+  position: relative;
+  padding: 0 20px;
+}
+
+.socials-slider {
+  -webkit-overflow-scrolling: touch;
+}
+
+.social-slide {
+  padding: 0 10px;
+  outline: none;
 }
 
 .social-slide .card {
-  text-align: center;
-  padding: 2rem;
   background: var(--card-bg);
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
   border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-slide .card:hover {
@@ -798,19 +810,96 @@ textarea {
 .social-link {
   text-decoration: none;
   color: var(--text);
+  display: block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-img {
-  width: 100%;
+  width: 80px;
   height: 80px;
   object-fit: contain;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  padding: 5px;
+  background: var(--background);
 }
 
 .teams .text {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text);
+  margin-top: 0.5rem;
+}
+
+/* Slick Slider Styles */
+.slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.slick-dots {
+  bottom: -50px;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--primary);
+  opacity: 1;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .teams .slider-container {
+    padding: 0 10px;
+  }
+  
+  .social-slide {
+    padding: 0 8px;
+  }
+  
+  .social-slide .card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .social-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socials-slider .slick-list {
+    margin: 0 -5px;
+  }
+  
+  .social-slide {
+    padding: 0 5px;
+  }
 }
 
 /* Footer */
