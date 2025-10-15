@@ -1505,6 +1505,214 @@ textarea {
     height: 280px;
   }
 }
+/* iOS Carousel Fixes - Force 1 slide on mobile */
+.socials-slider {
+  position: relative;
+  padding-bottom: 50px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.socials-slider .slick-list {
+  margin: 0 -10px;
+  padding: 25px 10px;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.socials-slider .slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.socials-slider .slick-slide {
+  padding: 0 10px;
+  height: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.socials-slider .slick-slide > div {
+  margin: 0 5px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Force single slide on mobile */
+@media (max-width: 768px) {
+  .socials-slider .slick-slide {
+    padding: 0 20px !important; /* More padding for single slide */
+  }
+  
+  .socials-slider .slick-list {
+    margin: 0 -20px !important; /* Adjust margin for single slide */
+    padding: 20px 0 !important; /* Adjust padding */
+  }
+  
+  .socials-slider .slick-track {
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important; /* Center the single slide */
+  }
+  
+  /* Disable hover effects on mobile */
+  .social-card:hover {
+    transform: none !important;
+  }
+  
+  .social-card:hover .social-img {
+    transform: none !important;
+  }
+  
+  .social-card:hover .social-cta {
+    transform: none !important;
+    background: rgba(122, 193, 228, 0.1) !important;
+    color: var(--social-color, var(--primary)) !important;
+  }
+  
+  .social-card.active {
+    transform: none !important; /* Disable active transform on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .socials-slider .slick-slide {
+    padding: 0 25px !important; /* Even more padding for small screens */
+  }
+  
+  .socials-slider .slick-list {
+    margin: 0 -25px !important;
+  }
+  
+  .social-card {
+    height: 280px;
+    margin: 0 auto; /* Center the card */
+    max-width: 300px; /* Limit max width for single slide */
+  }
+}
+
+/* Navigation Arrows */
+.socials-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.socials-slider .slick-arrow:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.socials-slider .slick-arrow:hover::before {
+  color: white;
+}
+
+.socials-slider .slick-arrow::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--text);
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+
+.socials-slider .slick-prev {
+  left: -25px;
+}
+
+.socials-slider .slick-prev::before {
+  content: '\f060';
+}
+
+.socials-slider .slick-next {
+  right: -25px;
+}
+
+.socials-slider .slick-next::before {
+  content: '\f061';
+}
+
+/* Mobile arrows positioning */
+@media (max-width: 768px) {
+  .socials-slider .slick-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .socials-slider .slick-prev {
+    left: 5px !important; /* Bring arrows closer on mobile */
+  }
+  
+  .socials-slider .slick-next {
+    right: 5px !important; /* Bring arrows closer on mobile */
+  }
+  
+  .socials-slider .slick-arrow::before {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socials-slider .slick-arrow {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .socials-slider .slick-prev {
+    left: 2px !important;
+  }
+  
+  .socials-slider .slick-next {
+    right: 2px !important;
+  }
+}
+
+/* Fix dots positioning */
+.socials-slider .slick-dots {
+  bottom: -35px;
+  position: absolute;
+  width: 100%;
+}
+
+.socials-slider .slick-dots li {
+  margin: 0 4px;
+}
+
+.socials-slider .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.socials-slider .slick-dots li button::before {
+  display: none;
+}
+
+.socials-slider .slick-dots li.slick-active button {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+/* Ensure proper card spacing */
+.social-card {
+  margin-bottom: 15px;
+  height: 300px;
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
