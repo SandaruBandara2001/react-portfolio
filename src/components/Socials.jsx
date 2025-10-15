@@ -9,17 +9,19 @@ const Socials = () => {
 
   const settings = {
     dots: true,
-    arrows: true, // Enable arrows
+    arrows: true,
     infinite: true,
     speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false, // Changed to false for iOS stability
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
     swipe: true,
     touchMove: true,
+    touchThreshold: 10, // Increased for better iOS touch
+    swipeToSlide: true,
     cssEase: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     beforeChange: (current, next) => setActiveSlide(next),
     responsive: [
@@ -34,28 +36,22 @@ const Socials = () => {
         breakpoint: 768, 
         settings: { 
           slidesToShow: 2,
-          arrows: true
+          arrows: true,
+          touchThreshold: 15
         } 
       },
       { 
         breakpoint: 480, 
         settings: { 
           slidesToShow: 1,
-          arrows: true
+          arrows: true,
+          touchThreshold: 20
         } 
       },
     ],
   };
 
   const socialLinks = [
-    { 
-      name: "Twitter", 
-      img: "/images/twitter.png", 
-      url: "https://twitter.com/Sandaru18769360",
-      color: "#1DA1F2",
-      icon: "fab fa-twitter",
-      description: "Follow for updates"
-    },
     { 
       name: "Facebook", 
       img: "/images/facebook.png", 
@@ -79,6 +75,14 @@ const Socials = () => {
       color: "#0A66C2",
       icon: "fab fa-linkedin-in",
       description: "Professional network"
+    },
+    { 
+      name: "Twitter", 
+      img: "/images/twitter.png", 
+      url: "https://twitter.com/Sandaru18769360",
+      color: "#1DA1F2",
+      icon: "fab fa-twitter",
+      description: "Follow for updates"
     },
     { 
       name: "GitHub", 
@@ -114,6 +118,7 @@ const Socials = () => {
                           src={social.img} 
                           alt={social.name} 
                           className="social-img"
+                          loading="lazy" // Add lazy loading for iOS
                         />
                         {/* <i className={social.icon}></i> */}
                       </div>
@@ -130,6 +135,7 @@ const Socials = () => {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="social-link-overlay"
+                    aria-label={`Visit ${social.name} profile`}
                   ></a>
                 </div>
               </div>
