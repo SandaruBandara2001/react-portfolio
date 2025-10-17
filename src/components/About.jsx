@@ -41,11 +41,7 @@ const About = () => {
                 </span>
               </div>
               <p className="about-description">
-                I'm Sandaru Bandara, 23 years old, a software engineering undergraduate student at the University of Westminster. 
-                As an undergraduate, I am an energetic and passionate individual who approaches tasks and situations with a mature 
-                and responsible mindset. I consistently strive for excellence and aim to achieve the highest standards in everything 
-                I undertake. I am experienced in working in challenging and fast-paced environments, effectively managing multiple 
-                projects and priorities simultaneously.
+                Hello I’m Sandaru Bandara,a software engineer and Full Stack developer passionate about building web experiences people love. I specialize in turning ideas into responsive, user friendly applications usingJava, JavaScript, React, Node.js, and Python. I thrive on solving complex problems, optimizing code, and creating digital solutions that make an impact. I focus on delivering high quality, scalable applications that combine functionality with great design.
               </p>
               <a 
                 href="https://drive.google.com/file/d/1Zb4H-07vy0bkUa3ZtK1OBCO999-xKEKd/view?usp=sharing" 
