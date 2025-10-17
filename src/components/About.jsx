@@ -41,7 +41,7 @@ const About = () => {
                 </span>
               </div>
               <p className="about-description">
-                Hello I’m Sandaru Bandara,a software engineer and Full Stack developer passionate about building web experiences people love. I specialize in turning ideas into responsive, user friendly applications usingJava, JavaScript, React, Node.js, and Python. I thrive on solving complex problems, optimizing code, and creating digital solutions that make an impact. I focus on delivering high quality, scalable applications that combine functionality with great design.
+                Hello I’m Sandaru Bandara, A software engineer and Full Stack developer passionate about building web experiences people love. I specialize in turning ideas into responsive, user friendly applications usingJava, JavaScript, React, Node.js, and Python. I thrive on solving complex problems, optimizing code, and creating digital solutions that make an impact. I focus on delivering high quality, scalable applications that combine functionality with great design.
               </p>
               <a 
                 href="https://drive.google.com/file/d/1Zb4H-07vy0bkUa3ZtK1OBCO999-xKEKd/view?usp=sharing" 
