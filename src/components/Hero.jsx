@@ -61,8 +61,8 @@ const Hero = () => {
             <span className="type-line">
               <TypeAnimation
                 sequence={[
-                  "Developer", 1000,
-                  "Student", 1000,
+                  "Full Stack Developer", 1000,
+                  "Software Engineer", 1000,
                   "Designer", 1000,
                   "Freelancer", 1000,
                 ]}
