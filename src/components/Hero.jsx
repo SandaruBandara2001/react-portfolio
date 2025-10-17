@@ -53,7 +53,7 @@ const Hero = () => {
       <div className="max-width">
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Hello, my name is</span>
+            <span>Hello, I'm</span>
           </div>
           <h1 className="hero-name">Sandaru Bandara</h1>
           <div className="hero-title">
@@ -63,7 +63,7 @@ const Hero = () => {
                 sequence={[
                   "Full Stack Developer", 1000,
                   "Software Engineer", 1000,
-                  "Designer", 1000,
+                  // "Designer", 1000,
                   "Freelancer", 1000,
                 ]}
                 wrapper="span"
