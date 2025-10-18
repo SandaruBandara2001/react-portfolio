@@ -14,7 +14,7 @@ const About = () => {
           <div className="column left">
             <div className="image-wrapper">
               <div className="image-glow"></div>
-              <img src="/images/Portfolio02.JPG" alt="Sandaru Bandara" className="profile-image" />
+              <img src="/images/Portfolio03.JPG" alt="Sandaru Bandara" className="profile-image" />
               <div className="image-badge">
                 <i className="fas fa-code"></i>
               </div>
