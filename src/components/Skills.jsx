@@ -23,6 +23,25 @@ const Skills = () => {
     }
   };
 
+  const techStacks = [
+    {
+      category: "Frontend",
+      technologies: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Tailwind CSS"]
+    },
+    {
+      category: "Backend",
+      technologies: ["Node.js", "Java", "Python", "PHP", "REST APIs"]
+    },
+    {
+      category: "Database",
+      technologies: ["MySQL", "MongoDB", "PostgreSQL"]
+    },
+    {
+      category: "Tools & Others",
+      technologies: ["Git", "GitHub", "VS Code", "Figma", "Strapi CMS", "Heroku", "Render"]
+    }
+  ];
+
   return (
     <section className="skills" id="skills">
       <div className="max-width">
@@ -60,60 +79,21 @@ const Skills = () => {
             </div>
           </div>
           <div className="column right">
-            <div className="skills-bars">
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span className="skill-name">HTML / CSS</span>
-                  <span className="skill-percent">90%</span>
-                </div>
-                <div className="skill-progress">
-                  <div className="skill-progress-bar html" style={{width: '90%'}}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span className="skill-name">JavaScript</span>
-                  <span className="skill-percent">85%</span>
-                </div>
-                <div className="skill-progress">
-                  <div className="skill-progress-bar js" style={{width: '85%'}}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span className="skill-name">React</span>
-                  <span className="skill-percent">80%</span>
-                </div>
-                <div className="skill-progress">
-                  <div className="skill-progress-bar react" style={{width: '80%'}}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span className="skill-name">Java</span>
-                  <span className="skill-percent">75%</span>
-                </div>
-                <div className="skill-progress">
-                  <div className="skill-progress-bar java" style={{width: '75%'}}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span className="skill-name">Python</span>
-                  <span className="skill-percent">70%</span>
-                </div>
-                <div className="skill-progress">
-                  <div className="skill-progress-bar python" style={{width: '70%'}}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-info">
-                  <span className="skill-name">MySQL</span>
-                  <span className="skill-percent">80%</span>
-                </div>
-                <div className="skill-progress">
-                  <div className="skill-progress-bar mysql" style={{width: '80%'}}></div>
-                </div>
+            <div className="tech-stack-section">
+              <h3 className="tech-stack-title">Tech Stack</h3>
+              <div className="tech-stack-container">
+                {techStacks.map((stack, index) => (
+                  <div key={index} className="tech-category">
+                    <h4 className="category-title">{stack.category}</h4>
+                    <div className="tech-tags">
+                      {stack.technologies.map((tech, techIndex) => (
+                        <span key={techIndex} className="tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
