@@ -1,16 +1,61 @@
-# React + Vite
+# Sandaru Bandara — React Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, responsive developer portfolio built with **React + Vite**.  
+Live demo → **https://react-portfolio-chi-wine-74.vercel.app/**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Responsive, accessible UI** (semantic HTML, keyboard-friendly components)
+- **Sections:** Hero, About, Skills/Tech, Projects, Contact
+- **Project cards** with links to live demos & repos
+- **Easy content edits** via small data files / component props
+- **Fast builds** with Vite + ESLint config
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧱 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React (Hooks), JSX, CSS
+- **Build tool:** Vite
+- **Tooling:** ESLint (project config), Git/GitHub
+- **Hosting:** Vercel (zero-config for Vite apps)
+
+> This repo is scaffolded with the official **React + Vite** template. :contentReference[oaicite:1]{index=1}
+
+---
+
+## 📸 Screenshots
+
+> Put images in `/public/` or `/screenshots/` and link them here.
+
+| Home (Hero) | Projects |
+|---|---|
+| ![Home](screenshots/home.png) | ![Projects](screenshots/projects.png) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 20+ (LTS recommended)
+- npm (or pnpm/yarn)
+
+### Install & Run
+```bash
+# clone
+git clone https://github.com/SandaruBandara2001/react-portfolio.git
+cd react-portfolio
+
+# install deps
+npm install
+
+# start dev server
+npm run dev
+
+# build for production
+npm run build
+
+# preview production build
+npm run preview
