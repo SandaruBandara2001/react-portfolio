@@ -165,17 +165,24 @@ const Socials = () => {
         {/* Social Stats */}
         <div className="social-stats">
           <div className="stat-item">
-            <div className="stat-number">5+</div>
+            <div className="stat-number">4+</div>
             <div className="stat-label">Platforms</div>
           </div>
+
           <div className="stat-item">
-            <div className="stat-number">Active</div>
+            <div className="stat-number">Open to Work</div>
             <div className="stat-label">Status</div>
           </div>
+
           <div className="stat-item">
-            <div className="stat-number">24/7</div>
-            <div className="stat-label">Response</div>
+            <div className="stat-number">10+</div>
+            <div className="stat-label">Projects</div>
           </div>
+
+          {/* <div className="stat-item">
+            <div className="stat-number"></div>
+            <div className="stat-label">Response</div>
+          </div> */}
         </div>
       </div>
     </section>
