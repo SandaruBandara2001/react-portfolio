@@ -51,7 +51,7 @@ const About = () => {
           <div className="journey-section-header">
             <h3 className="journey-section-title">Education, Experience & Certificates</h3>
             <p className="journey-section-text">
-              A quick overview of my academic background, professional experience, and certifications.
+              A quick overview of my academic background, professional experience and certifications.
             </p>
           </div>
 
