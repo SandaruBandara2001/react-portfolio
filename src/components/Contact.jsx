@@ -78,7 +78,7 @@ export default function Contact() {
         </div>
 
         <div className="contact-content">
-          {/* Left column (static contact info) */}
+        {/* Left column (static contact info) */}
           <div className="column left">
             <div className="contact-card">
               <div className="card-inner">
@@ -98,6 +98,7 @@ export default function Contact() {
                       <div className="contact-value">Sandaru Bandara</div>
                     </div>
                   </div>
+
                   <div className="contact-item">
                     <div className="contact-icon">
                       <i className="fas fa-map-marker-alt"></i>
@@ -107,6 +108,19 @@ export default function Contact() {
                       <div className="contact-value">Colombo, Sri Lanka</div>
                     </div>
                   </div>
+
+                  <div className="contact-item">
+                    <div className="contact-icon">
+                      <i className="fas fa-phone-alt"></i>
+                    </div>
+                    <div className="contact-details">
+                      <div className="contact-label">Mobile</div>
+                      <a href="tel:+94766947606" className="contact-value email-link">
+                        0766947606
+                      </a>
+                    </div>
+                  </div>
+
                   <div className="contact-item">
                     <div className="contact-icon">
                       <i className="fas fa-envelope"></i>
@@ -154,6 +168,7 @@ export default function Contact() {
                           className="form-input"
                         />
                       </div>
+
                       <div className="field email">
                         <input
                           name="email"
@@ -191,11 +206,10 @@ export default function Contact() {
                       />
                     </div>
 
-                    {/* status */}
                     {status.msg && (
                       <div
                         role="status"
-                        className={`status-message ${status.ok ? 'success' : 'error'}`}
+                        className={`status-message ${status.ok ? "success" : "error"}`}
                       >
                         {status.msg}
                       </div>
